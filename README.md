@@ -1,52 +1,101 @@
-# Yatzy Game
+# Yatzy Game Design Documentation
+
 
 ## Overview
-Yatzy is a popular dice game where players take turns rolling dice and trying to achieve various scoring combinations. The goal is to maximize your score by strategically selecting which dice to keep and which to re-roll.
+This project is part of CST3106 - LAB 05, where I developed and documented a single-player Yatzy game using a structured design system approach. Yatzy is a classic dice game where players aim to score points by rolling five dice to form specific combinations.
 
-## Rules
-1. **Number of Players:** 2 or more players.
-2. **Dice:** The game uses 5 dice.
-3. **Turns:** Each player has up to three rolls per turn. After rolling, the player can choose to keep some dice and re-roll the others.
-4. **Scoring Categories:**
-   - Three-of-a-kind
-   - Four-of-a-kind
-   - Full house
-   - Small straight
-   - Large straight
-   - Yatzy (five of a kind)
-   - Chance (sum of all dice)
-5. **Winning:** The game ends after all players have filled in all scoring categories. The player with the highest total score wins.
 
-## Design System Documentation
+## Lab Steps
 
-### Color Scheme
-- **Primary Color:** #1D4E89 (Dark Blue)
-- **Secondary Color:** #F0A500 (Bright Orange)
 
-### Fonts
-- **Headings:** 'Arial Black', sans-serif
-- **Subheadings:** 'Arial', sans-serif
-- **Body Text:** 'Georgia', serif
+### 1. Game Documentation in Markdown
+This section provides an overview of the Yatzy game and its rules. Players roll five dice in an attempt to score points through various combinations. The game concludes when all score categories are filled, and the player with the highest total score is declared the winner.
 
-### Rationale
-- **Color Choices:** The dark blue provides a calming background, while the bright orange adds a pop of color for important elements.
-- **Font Choices:** Arial is clean and easy to read, suitable for headings, while Georgia offers a classic feel for body text.
 
-Dice Representation:
-+-------+
-|   *   |  <-- Dot (pip)
-| *   * |
-|   *   |
-+-------+
+#### Game Rules
+- **Roll Five Dice**: Players roll five dice each turn.
+- **Re-rolls**: Players may hold certain dice and re-roll the remaining ones up to two additional times during their turn.
+- **Scoring**: Each turn, players must select a category to score points. Available scoring categories include:
+ - **Ones, Twos, Threes, etc.**: Score based on the number of matching dice.
+ - **Three of a Kind**: Total of all dice if at least three dice are the same.
+ - **Four of a Kind**: Total of all dice if at least four dice are the same.
+ - **Full House**: Three of one number and two of another, scoring 25 points.
+ - **Small Straight**: Four consecutive numbers, scoring 30 points.
+ - **Large Straight**: Five consecutive numbers, scoring 40 points.
+ - **Yatzy**: Five of a kind, scoring 50 points.
+ - **Chance**: Total of all dice.
 
-## Additional Documentation
 
-### Layout and Flow
-- The game layout consists of a scorecard and a dice rolling area.
-- Players roll the dice and score based on the categories in the scorecard.
+The game ends when all categories have been filled, and the player's total score is displayed.
 
-### User Interactions
-- Clicking the "Roll Dice" button will simulate rolling the dice and updating the scorecard.
 
-### Design Choices
-- The use of color contrasts makes important elements stand out, enhancing the user experience.
+### 2. Design System Documentation
+
+
+#### Color Scheme
+- **Primary Color**: `#3498db` (Light Blue)
+- **Secondary Color**: `#e74c3c` (Bright Red)
+- **Background Color**: `#f1f1f1` (Light Gray)
+- **Text Color**: `#2c3e50` (Dark Gray)
+
+
+These color choices provide a visually appealing contrast that enhances readability and contributes to a pleasant user experience.
+
+
+#### Fonts
+- **Headings**: `'Montserrat', sans-serif`
+- **Subheadings**: `'Lato', sans-serif`
+- **Body Text**: `'Open Sans', sans-serif`
+
+
+These font selections focus on clarity and modern aesthetics, ensuring readability and a consistent style throughout the game interface.
+
+
+### 3. Dice Design
+
+
+#### Dice Look and Feel
+- **Size**: Each die measures 100x100 pixels.
+- **Dice Color**: White (`#ffffff`).
+- **Pip Color**: Black (`#000000`).
+- **Pips (Dots)**: Circular dots evenly spaced on each face of the die.
+
+
+This straightforward and clean design ensures that the dice are easy to read and distinguish during gameplay.
+
+
+### 4. Game Mock-ups
+
+
+#### HTML/CSS Mock-ups
+The game will feature a sleek and responsive user interface. The main components include:
+
+
+- **Dice Area**: Displays the five dice and allows the player to hold and roll them.
+- **Scorecard**: Shows the current score and enables the player to select a category to score after each turn.
+- **Roll Button**: A button that allows the player to roll or re-roll the dice.
+
+
+Here is a basic HTML structure for the mock-up:
+
+
+```html
+<!-- Dice Area -->
+<div class="dice-area">
+ <div class="dice">1</div>
+ <div class="dice">2</div>
+ <div class="dice">3</div>
+ <div class="dice">4</div>
+ <div class="dice">5</div>
+</div>
+
+
+<!-- Scorecard -->
+<div class="scorecard">
+ <div class="score-category">Ones: <span class="score">0</span></div>
+ <div class="score-category">Twos: <span class="score">0</span></div>
+ <!-- Other categories... -->
+</div>
+
+<!-- Roll Button -->
+<button class="roll-btn">Roll Dice</button>
